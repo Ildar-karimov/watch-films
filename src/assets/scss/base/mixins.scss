@@ -1,0 +1,7 @@
+@use '../_const.scss' as *;
+
+@mixin media($point) {
+  @media screen and (max-width: map-get($breakpoints, $point)) {
+    @content;
+  }
+}
