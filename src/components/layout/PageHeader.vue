@@ -20,7 +20,7 @@
 </template>
 
 <style lang="scss" scoped>
-@use 'src/assets/scss/const/pallete/gray' as *;
+@use 'src/assets/scss/const/pallete/background-colors' as *;
 @use 'src/assets/scss/const/pallete/font-colors' as *;
 
 .page-header {
@@ -32,6 +32,6 @@
 
   color: map-get($fontColors, primary);
 
-  background-color: map-get($grayColors, 900);
+  background-color: map-get($backgroundColors, primary);
 }
 </style>
