@@ -1,36 +1,30 @@
 <script setup lang="ts">
+import SpriteIcon from '@/components/ui/SpriteIcon.vue'
 
+const spriteName: string = 'sidebar-sprite.svg'
 </script>
 
 <template>
-<div class="page-sidebar">
-  <nav class="page-sidebar__nav nav">
-    <router-link
-        to="/"
-        class="nav__link"
-    >
-      Главная
-    </router-link>
-    <router-link
-        to="/test3"
-        class="nav__link"
-    >
-      Фильмы
-    </router-link>
-    <router-link
-        to="/test2"
-        class="nav__link"
-    >
-      Сериалы
-    </router-link>
-    <router-link
-        to="/test"
-        class="nav__link"
-    >
-      Мое
-    </router-link>
-  </nav>
-</div>
+  <div class="page-sidebar">
+    <nav class="page-sidebar__nav nav">
+      <router-link to="/" class="nav__link">
+        <SpriteIcon :sprite-name="spriteName" icon-id="home" />
+        Главная
+      </router-link>
+      <router-link to="/test3" class="nav__link">
+        <SpriteIcon :sprite-name="spriteName" icon-id="film" />
+        Фильмы
+      </router-link>
+      <router-link to="/test2" class="nav__link">
+        <SpriteIcon :sprite-name="spriteName" icon-id="card" />
+        Сериалы
+      </router-link>
+      <router-link to="/test" class="nav__link">
+        <SpriteIcon sprite-name="sidebar-sprite.svg" icon-id="favorite-none" />
+        Мое
+      </router-link>
+    </nav>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -52,14 +46,26 @@
   gap: 4px 0;
 
   .nav__link {
+    display: flex;
+    align-items: center;
+    gap: 0 15px;
     padding: 10px 30px;
 
     color: map-get($fontColors, primary);
 
-    &:hover, &.router-link-active {
+    &::v-deep(.sprite-icon) {
+      fill: map-get($fontColors, primary);
+    }
+
+    &:hover,
+    &.router-link-active {
       color: map-get($fontColors, primary-hover);
 
       background-color: map-get($backgroundColors, primary-hover);
+
+      &::v-deep(.sprite-icon) {
+        fill: map-get($fontColors, primary-hover);
+      }
     }
   }
 }
