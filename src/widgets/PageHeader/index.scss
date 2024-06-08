@@ -1,12 +1,18 @@
 @use '@/shared/assets/scss/consts/pallete/background-colors.scss' as *;
 @use '@/shared/assets/scss/consts/pallete/font-colors.scss' as *;
+@use '@/shared/assets/scss/consts/layoutVariables.scss' as *;
 
 .page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
-  padding: 0 72px;
+  height: $headerHeight;
+  padding: 0 28px;
+  width: 100%;
 
   color: map-get($fontColors, primary);
 

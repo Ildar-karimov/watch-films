@@ -1,5 +1,5 @@
 <template>
-  <div class="page-sidebar">
+  <aside class="page-sidebar">
     <nav class="page-sidebar__nav nav">
       <router-link to="/" class="nav__link">
         <UiSpriteIcon :sprite-name="SPRITE_NAME" icon-id="home" />
@@ -18,7 +18,7 @@
         Мое
       </router-link>
     </nav>
-  </div>
+  </aside>
 </template>
 
 <script setup lang="ts">
@@ -31,9 +31,14 @@ const SPRITE_NAME = 'sidebar-sprite.svg';
 <style lang="scss" scoped>
 @use '@/shared/assets/scss/consts/pallete/background-colors.scss' as *;
 @use '@/shared/assets/scss/consts/pallete/font-colors.scss' as *;
+@use '@/shared/assets/scss/consts/layoutVariables.scss' as *;
 
 .page-sidebar {
-  width: 220px;
+  position: fixed;
+  left: 0;
+  top: $headerHeight;
+
+  width: $sideBarWidth;
   height: 100vh;
   padding: 15px 0;
 

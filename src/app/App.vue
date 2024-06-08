@@ -11,11 +11,11 @@
     <template #default>
       <PageBody>
         <RouterView />
-      </PageBody>
-    </template>
 
-    <template #footer>
-      <PageFooter />
+        <template #footer>
+          <PageFooter />
+        </template>
+      </PageBody>
     </template>
   </MainLayout>
 </template>
