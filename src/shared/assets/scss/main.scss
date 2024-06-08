@@ -1,0 +1,6 @@
+@use 'base/reset.scss' as *;
+@use 'constVariables.scss' as *;
+
+body {
+  font-family: $font-family;
+}

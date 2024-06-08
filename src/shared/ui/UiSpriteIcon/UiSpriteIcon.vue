@@ -12,9 +12,11 @@ defineProps({
 </script>
 
 <template>
-  <svg class="sprite-icon">
-    <use :xlink:href="`src/assets/vector/sprites/${spriteName}#${iconId}`" />
+  <svg class="ui-sprite-icon">
+    <use :xlink:href="`src/shared/assets/vector/sprites/${spriteName}#${iconId}`" />
   </svg>
 </template>
 
-<style scoped></style>
+<style scoped>
+@import "style.css";
+</style>

@@ -1,4 +1,4 @@
-@use '../_const.scss' as *;
+@use '../constVariables.scss' as *;
 
 @mixin media($point) {
   @media screen and (max-width: map-get($breakpoints, $point)) {

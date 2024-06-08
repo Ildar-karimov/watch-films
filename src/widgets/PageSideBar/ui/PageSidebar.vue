@@ -1,35 +1,36 @@
-<script setup lang="ts">
-import SpriteIcon from '@/components/ui/SpriteIcon.vue'
-
-const spriteName: string = 'sidebar-sprite.svg'
-</script>
-
 <template>
   <div class="page-sidebar">
     <nav class="page-sidebar__nav nav">
       <router-link to="/" class="nav__link">
-        <SpriteIcon :sprite-name="spriteName" icon-id="home" />
+        <UiSpriteIcon :sprite-name="SPRITE_NAME" icon-id="home" />
         Главная
       </router-link>
       <router-link to="/test3" class="nav__link">
-        <SpriteIcon :sprite-name="spriteName" icon-id="film" />
+        <UiSpriteIcon :sprite-name="SPRITE_NAME" icon-id="film" />
         Фильмы
       </router-link>
       <router-link to="/test2" class="nav__link">
-        <SpriteIcon :sprite-name="spriteName" icon-id="card" />
+        <UiSpriteIcon :sprite-name="SPRITE_NAME" icon-id="card" />
         Сериалы
       </router-link>
       <router-link to="/test" class="nav__link">
-        <SpriteIcon sprite-name="sidebar-sprite.svg" icon-id="favorite-none" />
+        <UiSpriteIcon sprite-name="sidebar-sprite.svg" icon-id="favorite-none" />
         Мое
       </router-link>
     </nav>
   </div>
 </template>
 
+<script setup lang="ts">
+import { UiSpriteIcon } from '@/shared/ui/UiSpriteIcon';
+
+const SPRITE_NAME = 'sidebar-sprite.svg';
+</script>
+
+
 <style lang="scss" scoped>
-@use 'src/assets/scss/const/pallete/background-colors' as *;
-@use 'src/assets/scss/const/pallete/font-colors' as *;
+@use '@/shared/assets/scss/consts/pallete/background-colors.scss' as *;
+@use '@/shared/assets/scss/consts/pallete/font-colors.scss' as *;
 
 .page-sidebar {
   width: 220px;
@@ -53,7 +54,7 @@ const spriteName: string = 'sidebar-sprite.svg'
 
     color: map-get($fontColors, primary);
 
-    &::v-deep(.sprite-icon) {
+    &::v-deep(.ui-sprite-icon) {
       fill: map-get($fontColors, primary);
     }
 
@@ -63,7 +64,7 @@ const spriteName: string = 'sidebar-sprite.svg'
 
       background-color: map-get($backgroundColors, primary-hover);
 
-      &::v-deep(.sprite-icon) {
+      &::v-deep(.ui-sprite-icon) {
         fill: map-get($fontColors, primary-hover);
       }
     }
